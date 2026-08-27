@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Mama!</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #1e1b2e 0%, #2d1f3d 50%, #1a1a2e 100%);
+    overflow: hidden;
+    position: relative;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 5;
+    animation: pop 0.8s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .photo-section {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .text-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  @keyframes pop {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Mama's Photo */
+  .mama-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 15px;
+    border: 5px solid rgba(255,255,255,0.4);
+    object-fit: cover;
+    box-shadow: 0 10px 40px rgba(255,170,0,0.5);
+    animation: photoGlow 2s ease-in-out infinite;
+    max-width: 90vw;
+  }
+
+  @keyframes photoGlow {
+    0%, 100% { box-shadow: 0 10px 40px rgba(255,170,0,0.5), inset 0 0 20px rgba(255,255,255,0.1); }
+    50% { box-shadow: 0 15px 50px rgba(255,170,0,0.7), inset 0 0 20px rgba(255,255,255,0.2); }
+  }
+
+  /* ---------- CSS Cake ---------- */
+  #cake {
+    display: block;
+    position: relative;
+    margin: -2em auto 0px auto;
+    width: fit-content;
+    flex-shrink: 0;
+  }
+
+  .candle {
+    background: #fffaf0;
+    border-radius: 8px;
+    position: relative;
+    margin: 0 auto -6px auto;
+    width: 5px;
+    height: 32px;
+    z-index: 2;
+  }
+
+  .fire {
+    border-radius: 100%;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    margin-left: -5px;
+    width: 10px;
+    height: 16px;
+    background: radial-gradient(circle at 50% 70%, #fff5c2 0%, #ffcc33 40%, #ff7b00 80%);
+    box-shadow: 0 0 10px 3px rgba(255,170,0,0.5), 0 0 20px 6px rgba(255,100,0,0.25);
+    animation: flicker 0.4s ease-in-out infinite alternate;
+    transform-origin: bottom center;
+  }
+
+  @keyframes flicker {
+    0%   { transform: scale(1, 1) rotate(-3deg); }
+    50%  { transform: scale(0.92, 1.08) rotate(2deg); }
+    100% { transform: scale(1.05, 0.95) rotate(-2deg); }
+  }
+
+  .tier {
+    margin: 0 auto;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .tier-top {
+    width: 75px;
+    height: 22px;
+    background: linear-gradient(180deg, #ffe0ec 0%, #ffb6c9 100%);
+    border: 2px solid #ff8fab;
+  }
+
+  .tier-mid {
+    width: 100px;
+    height: 25px;
+    background: linear-gradient(180deg, #ffd1dc 0%, #ff9fb5 100%);
+    border: 2px solid #ff7996;
+    margin-top: -2px;
+  }
+
+  .tier-base {
+    width: 125px;
+    height: 28px;
+    background: linear-gradient(180deg, #ffc2d1 0%, #ff85a2 100%);
+    border: 2px solid #ff6384;
+    margin-top: -2px;
+    border-radius: 5px 5px 8px 8px;
+  }
+
+  .drip {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: repeating-radial-gradient(circle at 10px 0, #fff0f5 0 3px, transparent 4px 16px);
+    opacity: 0.8;
+  }
+
+  .plate {
+    width: 150px;
+    height: 7px;
+    background: linear-gradient(180deg, #e6c15c, #b8860b);
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+  }
+  /* ---------- End CSS Cake ---------- */
+
+  .card h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6em;
+    font-weight: 400;
+    margin: 0 0 5px 0;
+    color: #ffd6a5;
+    letter-spacing: 2px;
+  }
+
+  .card h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2em;
+    font-weight: 900;
+    margin: 0 0 18px;
+    background: linear-gradient(90deg, #ffd6a5, #ff9fb5, #c8a2ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -1px;
+  }
+
+  .card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95em;
+    font-weight: 400;
+    color: #e6dceb;
+    line-height: 1.7;
+    margin: 0;
+    letter-spacing: 0.3px;
+  }
+
+  /* Falling cakes & candles (background decor) */
+  .falling {
+    position: absolute;
+    top: -60px;
+    font-size: 2em;
+    animation: fall linear infinite;
+    z-index: 1;
+    user-select: none;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0.9; }
+  }
+
+  /* Balloons */
+  .balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 40px;
+    height: 52px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: rise linear infinite;
+    opacity: 0.85;
+    z-index: 1;
+  }
+
+  .balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    width: 1px;
+    height: 18px;
+    background: #999;
+  }
+
+  @keyframes rise {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-60vh) rotate(8deg); }
+    100% { transform: translateY(-120vh) rotate(-5deg); }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="photo-section">
+      <img src="https://www.facebook.com/photo.php?fbid=3858087007701046&set=a.371575106352271&type=3&app=fbl" alt="Mama" class="mama-photo" id="mamaPhoto">
+    </div>
+    
+    <div class="text-section">
+      <div id="cake">
+        <div class="candle">
+          <div class="fire"></div>
+        </div>
+        <div class="tier tier-top"><div class="drip"></div></div>
+        <div class="tier tier-mid"><div class="drip"></div></div>
+        <div class="tier tier-base"><div class="drip"></div></div>
+        <div class="plate"></div>
+      </div>
+      <h2>happy birthday!</h2>
+      <h1>Mama</h1>
+      <p>Every candle carries a wish for your happiness.<br>
+      Thank you for your endless love, warmth, and care.<br>
+      I love you so much! 💕</p>
+    </div>
+  </div>
+
+  <script>
+    // Convert image to base64 if needed
+    const mamaPhotoElement = document.getElementById('mamaPhoto');
+    
+    const balloonColors = ['#ff9fb5', '#ffd6a5', '#c8a2ff', '#a0e7e5', '#fff5ba'];
+    const fallingItems = ['🎂', '🍰', '🕯️', '🎈', '🎉', '🧁'];
+
+    // Balloons rising from bottom
+    for (let i = 0; i < 10; i++) {
+      const balloon = document.createElement('div');
+      balloon.className = 'balloon';
+      balloon.style.left = Math.random() * 100 + 'vw';
+      balloon.style.background = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+      balloon.style.animationDuration = (7 + Math.random() * 6) + 's';
+      balloon.style.animationDelay = (Math.random() * 6) + 's';
+      document.body.appendChild(balloon);
+    }
+
+    // Falling cakes, cupcakes, candles from top
+    for (let i = 0; i < 16; i++) {
+      const item = document.createElement('div');
+      item.className = 'falling';
+      item.textContent = fallingItems[Math.floor(Math.random() * fallingItems.length)];
+      item.style.left = Math.random() * 100 + 'vw';
+      item.style.fontSize = (1.2 + Math.random() * 1.3) + 'em';
+      item.style.animationDuration = (6 + Math.random() * 6) + 's';
+      item.style.animationDelay = (Math.random() * 8) + 's';
+      document.body.appendChild(item);
+    }
+  </script>
+
+</body>
+</html>    margin: -4em auto 30px auto;
+    width: fit-content;
+  }
+
+  .candle {
+    background: #fffaf0;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto -8px auto;
+    width: 6px;
+    height: 40px;
+    z-index: 2;
+  }
+
+  .fire {
+    border-radius: 100%;
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    margin-left: -6px;
+    width: 12px;
+    height: 20px;
+    background: radial-gradient(circle at 50% 70%, #fff5c2 0%, #ffcc33 40%, #ff7b00 80%);
+    box-shadow: 0 0 12px 4px rgba(255,170,0,0.6), 0 0 25px 8px rgba(255,100,0,0.3);
+    animation: flicker 0.4s ease-in-out infinite alternate;
+    transform-origin: bottom center;
+  }
+
+  @keyframes flicker {
+    0%   { transform: scale(1, 1) rotate(-3deg); }
+    50%  { transform: scale(0.92, 1.08) rotate(2deg); }
+    100% { transform: scale(1.05, 0.95) rotate(-2deg); }
+  }
+
+  .tier {
+    margin: 0 auto;
+    border-radius: 6px;
+    position: relative;
+  }
+
+  .tier-top {
+    width: 90px;
+    height: 26px;
+    background: linear-gradient(180deg, #ffe0ec 0%, #ffb6c9 100%);
+    border: 2px solid #ff8fab;
+  }
+
+  .tier-mid {
+    width: 120px;
+    height: 30px;
+    background: linear-gradient(180deg, #ffd1dc 0%, #ff9fb5 100%);
+    border: 2px solid #ff7996;
+    margin-top: -2px;
+  }
+
+  .tier-base {
+    width: 150px;
+    height: 34px;
+    background: linear-gradient(180deg, #ffc2d1 0%, #ff85a2 100%);
+    border: 2px solid #ff6384;
+    margin-top: -2px;
+    border-radius: 6px 6px 10px 10px;
+  }
+
+  .drip {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: repeating-radial-gradient(circle at 10px 0, #fff0f5 0 4px, transparent 5px 20px);
+    opacity: 0.8;
+  }
+
+  .plate {
+    width: 180px;
+    height: 8px;
+    background: linear-gradient(180deg, #e6c15c, #b8860b);
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  }
+  /* ---------- End CSS Cake ---------- */
+
+  .card h2 {
+    font-size: 1.1em;
+    font-weight: 400;
+    margin: 0;
+    color: #f2d9e0;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  .card h1 {
+    font-size: 2.6em;
+    margin: 4px 0 14px;
+    background: linear-gradient(90deg, #ffd6a5, #ff9fb5, #c8a2ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .card p {
+    font-size: 1.05em;
+    color: #e6dceb;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Falling cakes & candles (background decor) */
+  .falling {
+    position: absolute;
+    top: -60px;
+    font-size: 2em;
+    animation: fall linear infinite;
+    z-index: 1;
+    user-select: none;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0.9; }
+  }
+
+  /* Balloons */
+  .balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 40px;
+    height: 52px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: rise linear infinite;
+    opacity: 0.85;
+    z-index: 1;
+  }
+
+  .balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    width: 1px;
+    height: 18px;
+    background: #999;
+  }
+
+  @keyframes rise {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-60vh) rotate(8deg); }
+    100% { transform: translateY(-120vh) rotate(-5deg); }
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div id="cake">
+      <div class="candle">
+        <div class="fire"></div>
+      </div>
+      <div class="tier tier-top"><div class="drip"></div></div>
+      <div class="tier tier-mid"><div class="drip"></div></div>
+      <div class="tier tier-base"><div class="drip"></div></div>
+      <div class="plate"></div>
+    </div>
+    <h2>HAPPY BIRTHDAY!</h2>
+    <h1>Mama</h1>
+    <p>Every candle carries a wish for your happiness.<br>
+    Thank you for your endless love, warmth, and care.<br>
+    I love you so much! 💕</p>
+  </div>
+
+  <script>
+    const balloonColors = ['#ff9fb5', '#ffd6a5', '#c8a2ff', '#a0e7e5', '#fff5ba'];
+    const fallingItems = ['🎂', '🍰', '🕯️', '🎈', '🎉', '🧁'];
+
+    // Balloons rising from bottom
+    for (let i = 0; i < 10; i++) {
+      const balloon = document.createElement('div');
+      balloon.className = 'balloon';
+      balloon.style.left = Math.random() * 100 + 'vw';
+      balloon.style.background = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+      balloon.style.animationDuration = (7 + Math.random() * 6) + 's';
+      balloon.style.animationDelay = (Math.random() * 6) + 's';
+      document.body.appendChild(balloon);
+    }
+
+    // Falling cakes, cupcakes, candles from top
+    for (let i = 0; i < 16; i++) {
+      const item = document.createElement('div');
+      item.className = 'falling';
+      item.textContent = fallingItems[Math.floor(Math.random() * fallingItems.length)];
+      item.style.left = Math.random() * 100 + 'vw';
+      item.style.fontSize = (1.2 + Math.random() * 1.3) + 'em';
+      item.style.animationDuration = (6 + Math.random() * 6) + 's';
+      item.style.animationDelay = (Math.random() * 8) + 's';
+      document.body.appendChild(item);
+    }
+  </script>
+
+</body>
+  </html>
